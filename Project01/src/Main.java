@@ -15,13 +15,11 @@ public class Main {
 
         System.out.println(Arrays.toString(numbers));
 
-        // List to store valid combinations
         List<int[]> validCombinations = new ArrayList<>();
 
-        // Generate and filter combinations
         SixNumberCombinations.generateCombinations(numbers, validCombinations);
 
-        // Write valid combinations to a file
+
         SixNumberCombinations.writeCombinationsToFile(validCombinations, "valid_combinations.txt");
     }
 }

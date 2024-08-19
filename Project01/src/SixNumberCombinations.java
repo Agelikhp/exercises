@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public class SixNumberCombinations {
-    // Ensure this method is public if you want to call it from Main
     public static int[] readNumbersFromFile(String filename) {
         List<Integer> numberList = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
@@ -20,11 +19,9 @@ public class SixNumberCombinations {
             e.printStackTrace();
         }
 
-        // Convert the list to an array
         return numberList.stream().mapToInt(i -> i).toArray();
     }
 
-    // Change this to public if you want to call it from Main
     public static void generateCombinations(int[] numbers, List<int[]> validCombinations) {
         int n = numbers.length;
         for (int i = 0; i < n - 5; i++) {
@@ -46,15 +43,15 @@ public class SixNumberCombinations {
     }
 
     public static boolean isValidCombination(int[] combination) {
-        // Implement your filtering logic here
-        return true; // Placeholder for actual filtering logic
+
+        return true;
     }
 
     public static void writeCombinationsToFile(List<int[]> combinations, String filename) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename))) {
             for (int[] combination : combinations) {
                 bw.write(Arrays.toString(combination));
-                bw.newLine(); // Write a new line after each combination
+                bw.newLine();
             }
             System.out.println("Valid combinations written to " + filename);
         } catch (IOException e) {
